@@ -8,7 +8,7 @@ export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
         setIsFollowing(!isFollowing)
     }
 
-    const text = isFollowing ? 'Dejar de seguir' : 'Seguir'
+    const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClassName = isFollowing 
     ?   'tw-followCard-button is-following'
     :   'tw-followCard-button'
@@ -23,7 +23,8 @@ export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
             </header>
             <aside>
                 <button className={buttonClassName} onClick={handleClick}>
-                    {text}
+                    <span className="tw-followCard-text">{text}</span>
+                    <span className="tw-followCard-stopFollow">Dejar de seguir</span>
                 </button>
             </aside>
         </article>
